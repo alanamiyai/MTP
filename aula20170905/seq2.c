@@ -1,15 +1,16 @@
+SEQ2.C
+
 #include <iostream>
 #include <stdio.h>
 using namespace std;
 void SafeFlush ()
 {
    int base, altura, area;
-   printf("Digite o valor da base:\n");
-   scanf("%d",&base);
-   printf("Digite o valor da altura:\n");
+   printf("Digite a altura do triangulo:\n");
    scanf("%d",&altura);
-   area=base*altura;
-   printf("Altura= %d",&area);
+   printf("\nDigite a base do triangulo:\n");
+   scanf("%d", &base);
+   area=(base*altura)/2;
+   printf("\nArea= %d\n", area);
    system("pause");
 }
-   
