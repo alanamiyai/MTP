@@ -13,7 +13,7 @@ void main ()
 		frase[i]=(tolower(frase[i]));
 	printf("A string %s possui %d caracteres\n", frase, strlen(frase));
 	if (strncmp (frase, "bom dia", 7)==0)
-        printf("\Bom Dia pra voce tambem!\n"); 
+        printf("\nBom Dia pra voce tambem!\n"); 
     else
         printf("\nVoce quis dizer: %s ? \n\n", frase);
 	if (strncmp (frase, "tchau", 5)==0)
