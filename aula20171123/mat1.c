@@ -6,9 +6,9 @@ int main()
 {
 	Matriz A, Ad;
 	int nlin, ncol;
-	printf("Entre com o numero de linhas e colunas da matriz quadrada (devem ser iguais) ");
+	printf("Entre com o numero de linhas e colunas da matriz quadrada\n");
 	scanf("%d", &nlin); 
-	scanf("%d", &ncol);
+	ncol = nlin;
 	A = criarMatriz(nlin, ncol);
 	preencherMatriz(A);
 	imprimirMatriz(A);
