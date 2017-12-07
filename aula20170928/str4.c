@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-using namespace std;
-void main ()
+#include <conio.h>
+int main ()
 {
 	char frase[10000];
 	printf("Escreva uma frase:\n");
@@ -25,6 +25,7 @@ void main ()
 			frase[i]='6';
 	}
 	printf("\n %s \n\n", frase);
-	system("pause");
+	getche ();
+	return 0;
 }
 
