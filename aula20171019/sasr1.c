@@ -1,9 +1,35 @@
-﻿'sasr1.exe': Loaded 'C:\Users\online\Documents\Visual Studio 2010\Projects\sasr1\Release\sasr1.exe', Symbols loaded.
-'sasr1.exe': Loaded 'C:\Windows\SysWOW64\ntdll.dll', Cannot find or open the PDB file
-'sasr1.exe': Loaded 'C:\Windows\SysWOW64\kernel32.dll', Cannot find or open the PDB file
-'sasr1.exe': Unloaded 'C:\Windows\SysWOW64\kernel32.dll'
-'sasr1.exe': Loaded 'C:\Windows\SysWOW64\kernel32.dll', Cannot find or open the PDB file
-'sasr1.exe': Loaded 'C:\Windows\SysWOW64\KernelBase.dll', Cannot find or open the PDB file
-'sasr1.exe': Loaded 'C:\Program Files\AVAST Software\Avast\aswhookx.dll', Cannot find or open the PDB file
-'sasr1.exe': Loaded 'C:\Windows\SysWOW64\msvcr100.dll', Cannot find or open the PDB file
-The program '[9316] sasr1.exe: Native' has exited with code 0 (0x0).
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <ctype.h>
+#define N 256
+
+void fala_computador() {
+    int idfala = rand()%9; // 0 a 8
+    switch(idfala) {
+	case 0: printf("Tudo bem?\n"); break;
+	case 1: printf("Ok\n"); break;
+	case 2: printf("LOL!\n"); break;
+	case 3: printf("Que legal\n"); break;
+	case 4: printf("Que chato\n"); break;
+	case 5: printf("Fale mais sobre isso\n"); break;
+	case 6: printf("Sobre o que mais quer falar?\n"); break;
+	case 7: printf("Eu nao acho...\n"); break;
+	case 8: printf("Tá bom, voce venceu\n"); break;
+    }
+}
+
+int main() {
+    srand(time(0));
+    char str[N]; int i;
+    printf("Vamos conversar? Sobre o que quer falar?\n");
+    while(1) {
+	fgets(str,N,stdin);
+	for(i = 0; i < N; i++) str[i] = toupper(str[i]);
+	if(strncmp(str,"TCHAU",5) == 0) break;
+	fala_computador();
+    }
+    printf("Uma pena... Foi bom falar com voce, ate logo!\n");
+    return EXIT_SUCCESS;
+}
