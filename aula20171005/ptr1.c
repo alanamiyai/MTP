@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	unsigned int i=0xFACA8421;
 	unsigned char *valori = NULL;
@@ -28,5 +29,6 @@ void main ()
 	printf("\nn0x%p : X%p ", valori[2], valori[2]);
 	printf("\n0x%p : X%p \n\n\n", valori[3], valori[3]);
 
-	system("pause");
+	getche ();
+	return 0;
 }
