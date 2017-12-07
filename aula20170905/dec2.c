@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-using namespace std;
+#include <conio.h>
 
-void main ();
+int main ();
 {
    srand(time(0));
    int num, flag=0, var, var2, num2, num3;
@@ -28,5 +28,6 @@ void main ();
    if (num3 == var2*3)
    flag++;
    printf("\nVoce somou um total de %d pontos: \n", flag);
+   getche ();
    return 0;
 }
