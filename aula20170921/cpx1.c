@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <complex.h>
+#include <conio.h>
 int main()
 {
     double complex Z1, Z2, soma;
@@ -16,5 +17,6 @@ int main()
     Z2=rZ2+iZ2*I;
     soma= Z1+Z2;
     printf("Soma: %lf + %lf*i\n", creal(soma), cimag(soma));
+    getche ();
     return 0;
 }
