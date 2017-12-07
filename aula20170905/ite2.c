@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namepspace std;
-void SafeFlush()
+#include <conio.h>
+
+int main ()
 {
    int base, potencia, resultado=1, p;
    printf("Digite a base da potencia: ");
@@ -11,5 +12,6 @@ void SafeFlush()
    for(p=0; p<potencia; p++)
      resultado=resultado*base;
    printf("\nResultado= %d \n", resultado);
-   system("pause");
+   getche ();
+   return 0;
 }
