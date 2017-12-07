@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main()
+#include <conio.h>
+
+int main()
 {
 	int vetor[10], n, i, j, k, aux;
 	for(i=0; i<10; i++)
@@ -20,5 +21,6 @@ void main()
 	printf("\nO vetor invertido= \n");
 	for (k=0; k<10; k++)
 		printf("  %d  ", vetor[k]);
-	system("pause");
+	getche ();
+	return 0;
 }
