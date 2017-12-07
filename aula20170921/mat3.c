@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 #include<iostream>
-using namespace std;
-void main()
+#include <conio.h>
+
+int main()
 {
 	float n,b,logaritimo;
 	printf("Digite um numero: \n");
@@ -11,5 +12,6 @@ void main()
 	scanf("%f", &b);
 	logaritimo=(log10(n))/(log10(b));
 	printf("Valor do logaririmo de n na base b = %f \n\n",logaritimo);
-	system("pause");
+	getche ();
+	return 0;
 }
