@@ -1,7 +1,7 @@
 #include <iostream>
 #include<stdio.h>
-using namespace std;
-void SafeFlush ()
+#include <conio.h>
+int main ()
 {
    float A, B, C, D, E, media;
    printf("Digite a nota A:\n");
@@ -16,6 +16,7 @@ void SafeFlush ()
    scanf("%f",&E);
    media=(A+A+B+B+C+C+D+D+D+E+E+E+E+E)/14;
    printf("Media= %f",&media);
-   system("pause");
+   getche ();
+   return 0;
 }
  
