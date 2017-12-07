@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
+#include <conio.h>
 using namespace std;
-void main ()
+int main ()
 {
 	int vet[4] = {0}, i;
 	char *p;
@@ -15,5 +16,6 @@ void main ()
 	for(i=0; i<sizeof(vet); i++)
 		printf("%c", p[i]);
 	printf("\n\n\n");
-	system("pause");
+	getche ();
+	return 0;
 }
