@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main()
+#include <conio.h>
+
+int main()
 {
 	int vetor[1000], n, i, j, soma=0, media;
 	printf("Digite um numero inteiro positivo: \n");
@@ -12,5 +13,6 @@ void main()
 		soma=soma+vetor[j];
 	media=soma/1000;
 	printf("\nA media dos numeros do vetor= %d \n\n", media);
-	system("pause");
+	getche ();
+	return 0;
 }
