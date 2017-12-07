@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	int vetor[10], n, soma=0, produto=1, i;
 	for(i=0; i<10; i++)
@@ -15,5 +16,6 @@ void main ()
 	for (i=0; i<10; i++)
 		produto = produto * vetor[i];
 	printf("\nSomatoria= %d \nProduto= %d \n\n", soma, produto);
-	system("pause");
+	getche ();
+	return 0;
 }
