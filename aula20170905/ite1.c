@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stdio>
 #include <conio.h>
 int main ()
