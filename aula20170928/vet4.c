@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	int n, i, vetor[1000], maior, menor;
 	printf("Digite a quantidade desejada de posicoes do vetor de 1 a 1000: \n\n");
@@ -18,5 +19,6 @@ void main ()
 			menor=vetor[i];
 	}
 	printf("\nO maior numero= %d \nO menor numero= %d \n\n", maior, menor);
-	system("pause");
+	getche ();
+	return 0;
 }
