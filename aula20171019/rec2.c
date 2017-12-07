@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -19,6 +18,5 @@ int main ()
 	gets(nome);
 	printf("O inverso da palavra e:\n");
 	inversao (nome);
-	getche ();
 	return 0;
 }
