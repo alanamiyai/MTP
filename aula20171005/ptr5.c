@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	srand(time(NULL));
 	int i, num, cont=0;
@@ -22,5 +23,6 @@ void main ()
 			printf("\nEm %p, temos %d", p+1, p[i]);
 		}
 		printf("\nTemos %d bytes com %d entre %p e %p\n\n", cont, num, p, p+sizeof(vet));
-		system("pause");
+	getche ();
+	return 0;
 }
