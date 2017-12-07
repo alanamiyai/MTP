@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 #include<iostream>
-using namespace std;
-void main()
+#include <conio.h>
+
+int main()
 {
 	float a,b,c,angulo;
 	printf("Informe o valor do lado b do triangulo:\n\n");
@@ -13,5 +14,6 @@ void main()
 	scanf("%f", &angulo);
 	a=sqrt(pow(b,2)+pow(c,2)-(2*b*c*cos(ang)));
 	printf("\nValor do lado a = \n %f \n\n",a);
-	system("pause");
+	getche ();
+	return 0;
 }
