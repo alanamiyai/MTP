@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <iostream>
+#include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -11,7 +11,7 @@ void inversao(char *nome)
 	    printf("%c",nome[x]);
 }
 
-void main () 
+int main () 
 {
 	int x,tam;
 	char nome[100];
@@ -19,5 +19,6 @@ void main ()
 	gets(nome);
 	printf("O inverso da palavra e:\n");
 	inversao (nome);
-	system ("pause");
+	getche ();
+	return 0;
 }
