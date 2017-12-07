@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	char string[16]={0};
 	int i;
@@ -16,5 +17,6 @@ void main ()
 	for(i=0; i<sizeof(p); i++)
 		printf("%x", p[i]);
 	printf("\n\n\n");
-	system("pause");
+	getche ();
+	return 0;
 }
