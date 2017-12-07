@@ -1,7 +1,7 @@
 #include<iostream>
 #include<stdio.h>
-using namespace std;
-void main()
+#include <conio.h>
+int main()
 {
 	int num;
 	float somaf=0, invertidof;
@@ -16,5 +16,6 @@ void main()
 		somad= somad + invertidod;
 	printf("\nResultado em float = %.15f \n\n",somaf);
 	printf("\nResultado em double = %.15lf \n\n",somad);
-	system("pause");
+	getche ();
+	return 0;
 }
