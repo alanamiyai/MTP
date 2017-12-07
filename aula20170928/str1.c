@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	char frase[10000];
 	int ret1, ret2;
@@ -20,5 +21,6 @@ void main ()
 		printf("\nSaindo? Que pena...\n\n");
 	else
 		printf(" ");
-	system("pause");
+	getche ();
+	return 0;
 }
