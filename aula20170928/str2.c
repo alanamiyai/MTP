@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	char frase[1000];
 	int cont1, cont2, cont3, cont4;
@@ -17,5 +18,6 @@ void main ()
 			cont2++;
 	}
 	printf("\nV= %d \n E= %d \n", cont1, cont2);
-	system("pause");
+	getche ();
+	return 0;
 }
