@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<ctype.h>
-#include<iostream>
 #include <conio.h>
 int main()
 {
