@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	double r1, r2, soma;
 	printf("Informe um valor real: \n");
@@ -13,5 +14,6 @@ void main ()
 	printf("\nNumero real 1 0x%p : %g\n", &r1, r1);
 	printf("\nNumero real 2 0x%p : %g\n", &r2, r2);
 	printf("\nSoma 0x%p : %g\n\n", &soma, soma);
-	system ("pause");
+	getche ();
+	return 0;
 }
