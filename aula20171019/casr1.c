@@ -3,8 +3,6 @@
 #include <ctype.h>
 #define N 256
 
-/* cifra ROT13, um exemplo de uma cifra de César */
-
 void criptografa(char *frase) {
 	int i = 0;
 	while(frase[i]) {
