@@ -1,6 +1,6 @@
-#include <iostream>
+#include <conio.h>
 #include <stdio.h>
-using namespace std;
+
 void pares_impares (int num)
 {
 	const int n=20;
@@ -22,11 +22,11 @@ void pares_impares (int num)
 	}
 }
 
-void main ()
+int main ()
 {
 	int num;
 	printf("Digite 1 para ver impares e 2 para ver pares: \n");
 	scanf("%d", &num);
 	pares_impares (num);
-	system ("pause");
+	return 0;
 }
