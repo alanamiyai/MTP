@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	int vet[] = {0, 1, 2, 4, 8, 16, 1025};
 	int t=0, tamanho = (sizeof(vet)/sizeof(int));
@@ -18,5 +19,6 @@ void main ()
 			t++;
 	}
 	printf("%d", t);
-	system("pause");
+	getche ();
+	return 0;
 }
