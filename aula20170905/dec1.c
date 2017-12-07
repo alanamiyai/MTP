@@ -1,9 +1,7 @@
-dec1.c
-
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void SafeFlush ()
+#include <conio.h>
+int main ()
 {
    int num;
    if(num%2==0)
@@ -18,6 +16,7 @@ void SafeFlush ()
      if(num%5==0)
        printf("multiplo de 5");
    }
-   system("pause");
+   getche ();
+   return 0;
 }
 
