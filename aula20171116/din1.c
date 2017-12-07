@@ -1,6 +1,4 @@
-#include <iostream>
 #include <stdio.h>
-using namespace std;
 int media(int *numero, int n)
 {
 	float soma, media;
@@ -18,7 +16,7 @@ void desvio (int *numero, int n, int m)
 	d=sqrt(soma/(n-1));
 	printf("\nDesvio padrao = %f", d);
 }
-void main ()
+int main ()
 {
 	int *numeros[100];
 	int n, m;
@@ -32,5 +30,5 @@ void main ()
 	}
 	m=media(*numeros, n);
 	desvio(*numeros, n, m);
-	system("pause");
+	return 0;
 }
