@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-using namespace std;
+#include <conio.h>
 
-void main ()
+int main ()
 {
 	int i;
 	float n, cont=0, num;
@@ -20,5 +20,6 @@ void main ()
 		}
 		printf("%f.", cont);
 	} while (n<=1);
+	getche ();
 	return 0;
 }
