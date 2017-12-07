@@ -1,9 +1,7 @@
-ite1.c
-
 #include <iostream>
 #include <stdio>
-using namespace std;
-void SafeFlush ()
+#include <conio.h>
+int main ()
 {
    int num, fat=1;
    prinf("Digite um numero para calcular o fatorial");
@@ -11,6 +9,7 @@ void SafeFlush ()
    for(int i=num; i>=1; i--)
      fat=fat*i;
    printf("\nFatorial: %d\n", fat);
-   system("pause");
+   getche ();
+   return 0;
 }
 
