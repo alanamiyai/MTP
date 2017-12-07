@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include <conio.h>
 
 void desenho (int x, int y)
 {
@@ -24,6 +23,5 @@ int main ()
 	printf("\nDigite o numero de linhas do desenho\n");
 	scanf("%d", &y);
 	desenho (x, y);
-	getche ();
 	return 0;
 }
