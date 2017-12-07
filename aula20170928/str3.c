@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-using namespace std;
-void main ()
+#include <conio.h>
+
+int main ()
 {
 	int i;
 	char frase[1000];
@@ -23,5 +24,6 @@ void main ()
 			cifra[i]=frase[i];
 	}
 	printf("\nMensagem: \n %s \n", cifra);
-	system ("pause");
+	getche ();
+	return 0;
 }
