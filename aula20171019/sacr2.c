@@ -6,7 +6,7 @@ int dado() {
 	return rand()%6 + 1;
 }
 
-void main() {
+int main() {
 	int cont=0, soma=0, x;
     srand(time(0));
     char c;
@@ -22,5 +22,5 @@ void main() {
 		printf("\nVoce Venceu!\n");
 	if (soma < 18 || soma > 23)
 		printf("\nVoce perdeu!" );
-    system ("pause");
+    return 0;
 }
