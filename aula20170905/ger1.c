@@ -1,9 +1,7 @@
-ger1.c
-
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void SafeFlush ()
+#include <conio.h>
+int main ()
 {
    int num, flag=0;
    printf("Digite um numero para verificar se e primo: ")
@@ -20,5 +18,6 @@ void SafeFlush ()
      printf("\nO numero e primo")
    else
      printf("\nNao e primo")
+   getche ();
    return 0;
 }
