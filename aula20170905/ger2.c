@@ -1,9 +1,7 @@
-ger2.c
-
 #include <iostream>
 #include <stdio.h>
-using namespace std;
-void SafeFlush ()
+#include <conio.h>
+int main ()
 {
    int num, soma=0;
    printf("Digite o numero a ser verificado: ");
@@ -17,5 +15,6 @@ void SafeFlush ()
      printf("\nO numero e perfeito\n");
    else
      printf("\nNao e perfeito\n");
+   getche ();
    return 0;
 }
