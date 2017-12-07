@@ -44,5 +44,5 @@ int main()
 		else
 		printf  ("\nNao existe raiz real!");
 	getch();
-	system("pause");
+	return EXIT_SUCESS;
 }
