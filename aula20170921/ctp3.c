@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <ctype.h>
-using namespace std;
-void main()
+#include <conio.h>
+int main()
 {
 	int cont=0;
 	char frase[300];
@@ -14,5 +14,6 @@ void main()
 		cont++;
 	}
 	printf("O numero de letras digitadas na frase = \n %d\n\n" , cont);
-	system("pause");
+	getche ();
+	return 0;
 }
