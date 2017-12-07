@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <math.h>
 
 float raizes (int a, int b, int c)
@@ -43,6 +42,5 @@ int main()
 			raiz_zero (a,b);
 		else
 		printf  ("\nNao existe raiz real!");
-	getch();
 	return EXIT_SUCESS;
 }
