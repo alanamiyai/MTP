@@ -1,6 +1,4 @@
-#include <iostream>
 #include <stdio.h>
-using namespace std;
 void imprime(float ** transposta, int m, int n)
 {
 	printf("\nMatriz Transposta= \n\n\n");
@@ -19,7 +17,7 @@ float** transposta (float **matriz, float ** matrizT, int m, int n)
 			matrizT[i][j]=matriz[j][i];
 	return matrizT;
 }
-void main ()
+int main ()
 {
 	int n, m;
 	float **matriz, **matrizT;
@@ -41,5 +39,5 @@ void main ()
 	}
 	matrizT = transposta(matriz, matrizT, m, n);
 	imprime(matrizT, m, n);
-	system("pause");
+	return 0;
 }
