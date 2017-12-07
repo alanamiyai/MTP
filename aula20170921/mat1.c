@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<iostream>
-using namespace std;
-void main()
+int main()
 {
 	float distancia,x1,y1,x2,y2;
 	printf("Informe o valor da cooordenada x do ponto 1: \n");
@@ -15,5 +13,5 @@ void main()
 	scanf("%f", &y2);
 	distancia=sqrt(pow((x2-x1),2)+pow((y2-y1),2));
 	printf("A distancia entre os pontos 1 e 2= \n %f \n\n",distancia);
-	system("pause");
+	return 0;
 }
