@@ -1,0 +1,383 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<conio.h>
+#define n 64
+int dez_dep=0, cinquenta_dep=0, cem_dep=0, quinhentos_dep=0;
+int dez_saq=0, cinquenta_sac=0, cem_sac=0, quinhentos_sac=0;
+
+void menu();
+
+struct cadastro
+{
+   char nome[n];
+   int idade;
+   char RG[9];
+   char CPF[12];
+   char SENHA[15];
+	char conf_senha[15];
+	char USER[20];
+	double saldo;
+	int deposito[100];
+	int saque[100];
+}pessoa;
+
+int posicao = 0;
+int posicao_sac=0;
+int posicao_dep=0;
+int cont1=0;
+
+void criarconta()
+{
+	FILE * acessocliente;
+	int opc;
+    printf("\nDigite o seu nome:\t");
+    scanf("%s",&pessoa.nome);
+    printf("\nDigite a sua idade:\t");
+	scanf("%d",&pessoa.idade);
+	if(pessoa.idade<18)
+	{
+	printf("\nNao e possivel evetivar seu cadastro, retorne ao alcancar a maioridade.");
+	getche();
+	return 0;
+	}
+	else
+    printf("\nDigite seu RG:\t");
+	scanf("%s",&pessoa.RG);
+	printf("\nDigite seu CPF:\t");
+	scanf("%s",&pessoa.CPF);
+	printf("\nDigite o usurario que gostaria de utilizar:\t");
+	scanf("%s",&pessoa.USER);
+	strcat(USER,".txt");
+	printf("\nDigite sua senha:\t");
+	scanf("%s",&pessoa.SENHA);
+	printf("\nDigite novamente a sua senha para confirmar:\t");
+	scanf("%s",&pessoa.conf_senha);
+	if(strcmp(pessoa.SENHA,pessoa.conf_senha)==0)
+	{
+		acessocliente=fopen(USER, "w+");
+		if(acessocliente==NULL)
+	    {
+		printf("\nDesculpe, nao foi possivel abrir a conta");
+		}
+		else
+		{
+	    printf("\nConcluido! Seu cadastro foi efetivado com sucesso, aguarde a chegada do seu cartao.");
+		printf("\nSaldo: \n");
+		pessoa.saldo==0;
+		printf("%lf",pessoa.saldo);
+		fprintf(acessocliente,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d",pessoa.nome,pessoa.idade,pessoa.RG,pessoa.CPF,pessoa.USER,pessoa.SENHA, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+		fclose(acessocliente);
+		menu();
+		}
+	}
+	else
+	{
+		printf("\nA senha utilizada nao consta no banco de dados.\n");
+	menu();
+	}
+}
+
+int entrarconta()
+{
+	system ("cls");
+	FILE * acessoconta;
+	int flag =2;
+	char acesso_user[20];
+	char password[15];
+	printf("\nDigite seu usuario: ");
+	scanf("%s", &acesso_user);
+	printf("\nDigite sua senha: ");
+	scanf("%s", &password);
+	if(strcmp(acesso_user,dados.USER)==0) 
+	{
+		if (strcmp(password,dados.SENHA)==0)
+		{
+		flag=1;
+		cont1 = 0;
+		}
+		else if (cont1 <3)
+		{
+			printf("\nSua senha esta incorreta! Pressione ENTER para tentar novamente.");
+			getche();
+			cont1++;
+			entrarconta();
+		}
+		else if (cont1 >= 3)
+		{
+			printf("\nACESSO NEGADO! Voce atingiu o limite de tentativas. Pressione ENTER para retornar ao menu.");
+			cont1 = 0;
+			getche();
+			menu();
+		}
+	}
+	else if(strcmp(acesso_user,dados.USER)!=0) 
+	{
+		flag=0;
+	}
+	return flag;
+}
+
+void mostrarconta()
+{
+    FILE * acessocliente;
+	int Y;
+	char procurarcliente[n];
+	char user_2[20];
+	char senha[15];
+	char nome[n];
+	char idade[4];
+	char rg[9];
+	char cpf[12];
+	char user[100];
+	char senha_1[100];
+	int x=0;
+	printf("\nGostaria de visualisar sua conta: 1-nome ou 2-User");
+	scanf("%d",&x);
+	if(x==1)
+	{
+	printf("Digite seu nome para saber suas informacoes da conta:");
+	scanf("%s",&procurarcliente);
+	acessocliente=fopen(USER, "r");	
+    fscanf(stdin,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d\n",nome,idade,rg,cpf,user,senha_1, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+    fclose(acessocliente);
+	strcpy(pessoa.nome,nome);
+	strcpy(pessoa.idade,idade);
+	strcpy(pessoa.RG,rg);
+	strcpy(pessoa.CPF,cpf);
+	strcpy(pessoa.USER,user);
+	strcpy(pessoa.SENHA,senha_1);
+	if(strcmp(procurarcliente,nome)==0)
+	{
+		printf("\nQual sua senha:");
+		scanf("%s", &senha);
+		if(strcmp(senha,senha_1)==0)
+		{
+		
+	printf("%s\n%s anos\n%s \n%s",nome,idade,rg,cpf);
+      }
+		else
+		{
+			printf("\nSua senha esta incorreta, entre em contato com o banco para mudar sua senha!");
+		}
+	}
+	}
+	if(x==2)
+	{
+		Y = entrarconta();
+		if(Y==1)
+	   {
+	      acessocliente=fopen(USER,"r");
+	      fscanf(stdin,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d",nome,idade,rg,cpf,user,senha_1, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+              fclose(acessocliente);
+	      strcpy(pessoa.nome,nome);
+	      strcpy(pessoa.idade,idade);
+	      strcpy(pessoa.RG,rg);
+	      strcpy(pessoa.CPF,cpf);
+	      strcpy(pessoa.USER,user);
+	      strcpy(pessoa.SENHA,senha_1);
+	      printf("%s\t%s anos\t%s \t%s",nome,idade,rg,cpf);
+           }
+        }
+}
+void mostrarsaldo()
+{
+	FILE * acessocliente;
+	int Y;
+	Y = entrarconta();
+	if(Y==1)
+	{
+    acessocliente=fopen(USER, "r");
+    fscanf(stdin,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d",pessoa.nome,pessoa.idade,pessoa.RG,pessoa.CPF,pessoa.USER,pessoa.SENHA, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+    fclose(acessocliente);
+	printf("%lf reais de saldo",pessoa.saldo);
+    }
+	else
+		menu();
+}
+void inserirdinheiro()
+{
+	FILE * acessocliente;
+	int Y;
+	int dindin;
+	int ops;
+	Y=entrarconta();
+	if(Y==1)
+	{
+	printf("\nQuanto voce pretende depositar?\n 1-10\n  2-50\n 3-100\n  4-500\n 5-Outro valor\n");
+	scanf("%d", &ops);
+	if(ops==1)
+	{
+		dez_dep++;
+		pessoa.saldo /= +10;
+	}
+	else if(ops==2)
+	{
+		cinquenta_dep++; 
+		pessoa.saldo /= +50;
+	}
+	else if(ops==3)
+	{
+		cem_dep++;
+		pessoa.saldo /= +100;
+	}
+	else if(ops==4)
+	{
+		quinhentos_dep++;
+		pessoa.saldo /= +500;
+	}
+	else if(ops==5)
+	{
+		printf("\nDigite o valor desejado:");
+		scanf("%lf", dindin);
+		pessoa.saldo /= +dindin;
+		pessoa.deposito[posicao_dep] = dindin;
+		posicao_dep ++;
+	}
+	}
+	acessocliente=fopen(USER, "w+");
+	fscanf(stdin,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d",pessoa.nome,pessoa.idade,pessoa.RG,pessoa.CPF,pessoa.USER,pessoa.SENHA, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+	pessoa.saldo=money + pessoa.saldo;
+    printf("%lf",pessoa.saldo);
+    fclose(acessocliente);
+	mostrarsaldo();
+}
+void retirardinheiro()
+{
+	int Y;
+	FILE * acessocliente;
+	char nome[n];
+	double dindin;
+	int ops_2;
+	Y = entrarconta();
+	if (Y==1)
+	{
+	printf("\nQuanto voce pretende sacar?\n 1-10\n  2-50\n 3-100\n  4-500\n 5-Outro valor\n");
+	scanf("%d", &ops_2);
+	if(ops_2==1)
+	{
+		dez_sac++;
+		pessoa.saldo /= -10;
+	}
+	else if(ops_2==2)
+	{
+		cinquenta_sac++; 
+		pessoa.saldo /= -50;
+	}
+	else if(ops_2==3)
+	{
+		cem_sac++;
+		pessoa.saldo /= -100;
+	}
+	else if(ops_2==4)
+	{
+		quinhentos_sac++;
+		pessoa.saldo /= -500;
+	}
+	else if(ops_2==5)
+	{
+		printf("\nDigite o valor desejado:");
+		scanf("%lf", dindin);
+		pessoa.saldo /= -dindin;
+		pessoa.saque[posicao_sac] = dindin;
+		posicao_sac ++;
+	}
+	}
+	acessocliente=fopen(USER, "w+");
+    fscanf(stdin,"\t%s\t%d\t%s\t%s\t%s\t%s\t%lf\t%s\t%d\t%d",pessoa.nome,pessoa.idade,pessoa.RG,pessoa.CPF,pessoa.USER,pessoa.SENHA, pessoa.conf_senha,pessoa.saldo,pessoa.saque, pessoa.deposito);
+    fclose(acessocliente);
+    mostrarsaldo();
+}
+
+void extrato()
+{
+	int Y;
+	Y=entrarconta();
+	if(Y==1)
+	{
+	   int i;
+	   printf("Historico de saques:\n");
+	   if (dez_sac!=0)
+		printf("%d x -10,00", dez_sac);
+	   if (cinquenta_sac!=0)
+		printf("%d x -50,00", cinquenta_sac);
+	   if (cem_sac!=0)
+		printf("%d x -100,00", cem_sac);
+	   if (quinhentos_sac!=0)
+		printf("%d x -500,00", quinhentos_sac);
+	   for (i=0; i<posicao_sac; i++)
+	   {
+		printf("- %d", pessoa.saque[i]);
+	   }
+	   printf("Historico de depositos:\n");
+	   if (dez_dep!=0)
+		printf("%d x +10,00", dez_dep);
+	   if (cinquenta_dep!=0)
+		printf("%d x +50,00", cinquenta_dep);
+	   if (cem_dep!=0)
+		printf("%d x +100,00", cem_dep);
+	   if (quinhentos_dep!=0)
+		printf("%d x +500,00", quinhentos_dep);
+	   for (i=0; i<posicao_dep; i++)
+	   {
+		printf("+ %d", pessoa.deposito[i]);
+	   }
+	}
+}
+
+void removerconta()
+{
+	FILE * acessocliente;
+    char apagar[n];
+	char nome[n];
+	int w=0;
+	printf("\nEntre com seu nome:");
+	scanf("%s", apagar);
+	printf("\nVoce tem certeza de que quer apagar sua conta? \n1-Sim \n2-Não\n");
+	scanf("%d",&w);
+	if(w==1)
+	{
+		acessocliente=fopen(USER, "w+");
+		fscanf(stdin,"\t%s\t%s\t%lf\t%s\t%d\t%s\t%s\t%s", &dados.USER,&dados.SENHA,&dados.dinheiro,&dados.info.nome,&dados.info.idade,&dados.info.RG,&dados.info.CPF);
+		if(strcmp(apagar,dados.info.nome)==0)
+		{
+    remove("USER.txt");
+    fclose(acessocliente);
+		}
+	}
+	else
+		printf("\nEscolha certa! Ficamos felizes em continuar sendo seu banco!");
+	menu();
+}
+
+void menu()
+{
+	int x=0;
+	 printf("1-Criar conta \n");
+        printf("2-Mostrar conta \n");
+        printf("3-Mostrar saldo \n");
+		printf("4-Inserir dinheiro \n");
+		printf("5-Retirar dinheiro \n");
+		printf("6-Extrato \n");
+		printf("7-Remover conta \n");
+		printf("8-Sair do programa \n");
+        scanf("%d",&x);
+		if(x==1)
+      criarconta();
+	else if(x==2)
+        mostrarconta();
+	else if(x==3)
+		mostrarsaldo();
+	else if(x==4)
+		inserirdinheiro();
+	else if(x==5)
+		retirardinheiro();
+	else if(x==6)
+		extrato();
+	else if(x==7)
+		removerconta();
+	else
+	{
+		exit;
+	}
+}
